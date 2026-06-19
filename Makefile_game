@@ -1,0 +1,17 @@
+CXX      = g++
+CXXFLAGS = -std=c++17 -Wall -O2
+TARGET   = mini_game
+SRC      = mini_game.cpp
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+
+clean:
+	rm -f $(TARGET)
+
+run: all
+	./$(TARGET)
+
+.PHONY: all clean run
